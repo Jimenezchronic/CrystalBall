@@ -16,7 +16,7 @@ import android.widget.TextView;
         setContentView(R.layout.activity_crystalball);
 
     answerText = (TextView) findViewById(R.id.answerText);
-     answerText.setText("No i not");
+     answerText.setText(Predictions.get().getprediction());
     }
 
 }

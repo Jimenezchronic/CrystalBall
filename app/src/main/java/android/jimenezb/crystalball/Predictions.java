@@ -18,4 +18,7 @@ public class Predictions {
         return  predictions;
     }
 
+    public String getprediction(){
+        return answers[0];
+    }
 }
