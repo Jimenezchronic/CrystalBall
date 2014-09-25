@@ -7,7 +7,8 @@ public class Predictions {
 
     private Predictions(){
         answers = new String[]{
-          "your milk is spoiled!"
+          "your milk is spoiled!",
+          "look behind you.."
         };
     }
 
@@ -19,6 +20,6 @@ public class Predictions {
     }
 
     public String getprediction(){
-        return answers[0];
+        return answers[1];
     }
 }
