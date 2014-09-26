@@ -52,11 +52,13 @@ import android.widget.TextView;
      @Override
      protected void onResume() {
          super.onResume();
+         sensormanager.registerListener(sensorListener, accelrometer, SensorManager.SENSOR_DELAY_NORMAL);
      }
 
      @Override
      protected void onPause() {
          super.onPause();
+         sensormanager.unregisterListener(sensorListener);
      }
  }
 
