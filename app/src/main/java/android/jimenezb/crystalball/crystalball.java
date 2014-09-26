@@ -1,6 +1,7 @@
  package android.jimenezb.crystalball;
 
 import android.app.Activity;
+import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -12,7 +13,7 @@ import android.widget.TextView;
  public class crystalball extends Activity {
     private TextView answerText;
      private SensorManager sensormanager;
-     private Sensor accerometer;
+     private Sensor accelrometer;
      private float acceleration;
      private float currentacceleration;
      private float previousacceleration;
@@ -33,9 +34,15 @@ import android.widget.TextView;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crystalball);
 
+        sensormanager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
+        accelrometer = sensormanager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
     answerText = (TextView) findViewById(R.id.answerText);
      answerText.setText(Predictions.get().getprediction());
     }
+
+
+
 
      @Override
      protected void onResume() {
