@@ -37,6 +37,11 @@ import android.widget.TextView;
         sensormanager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
         accelrometer = sensormanager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
+        acceleration = 0.0f;
+        currentacceleration = SensorManager.GRAVITY_EARTH;
+        previousacceleration = SensorManager.GRAVITY_EARTH;
+
+
     answerText = (TextView) findViewById(R.id.answerText);
      answerText.setText(Predictions.get().getprediction());
     }
